@@ -5,6 +5,10 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour {
 
 	// public variables
+	public GameObject[] m_spawnPos;			// All spawn position present in the scene
+	public GameObject m_podiumA;			// Instance of the podium A
+	public GameObject m_podiumB;			// Instance of the podium B
+	public GameObject m_podiumC;			// Instance of the podium C
 
 	// private variables
 
