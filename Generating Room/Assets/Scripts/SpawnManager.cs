@@ -23,6 +23,11 @@ public class SpawnManager : MonoBehaviour {
 	// Update is called once per frame
 	// ------------------------------------
 	void Update () {
+		// TEMPORARY ________________
+		if (Input.GetKeyDown(KeyCode.Space)) {
+			reset();
+			generate();
+		}
 		
 	}
 
@@ -36,11 +41,17 @@ public class SpawnManager : MonoBehaviour {
 			int index = Random.Range(0, 3);
 			// Instantiate a podium at a unique position from the array
 			GameObject aPodium = Instantiate (m_podiums[index], m_spawnPos[i].position, m_spawnPos[i].rotation);
-
-
 		}
+	}
 
+	public void reset() {
+		// Get all the podiums in the room
+		GameObject[] elements = GameObject.FindGameObjectsWithTag("Podium");
 
+		// Delete all of them
+		for (int i = 0; i < elements.Length; i++) {
+			Destroy(elements[i]);
+		}
 	}
 
 }

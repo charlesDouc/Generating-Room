@@ -372,9 +372,9 @@ MonoBehaviour:
   - {fileID: 695694178}
   - {fileID: 904988574}
   m_podiums:
-  - {fileID: 1843668038653332, guid: 77877f828a532fa4db8da22303696629, type: 2}
-  - {fileID: 1368515437636550, guid: b3c6fd9da256d604bb36e0e5e5a8efd0, type: 2}
-  - {fileID: 1949324295741178, guid: dae7f7e279da50b49ad9a2108da606b6, type: 2}
+  - {fileID: 1215976373584440, guid: 5a2a7f49110a74641ac6b7404ec56d0f, type: 2}
+  - {fileID: 1433789703868216, guid: 9ade4069a0cb8584f880ba3c1b4c8332, type: 2}
+  - {fileID: 1726791018772636, guid: 31106dfcbb3e1f443bebd34e5552d34a, type: 2}
 --- !u!1 &399636998
 GameObject:
   m_ObjectHideFlags: 0
