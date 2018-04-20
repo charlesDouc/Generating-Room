@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class ButtonEventController : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+  public GameObject gm;
+  private SpawnManager sm;
+
+  private AudioSource asrc;
+
+  void Start () {
+	gm = GameObject.Find("GM");
+	sm = gm.GetComponent<SpawnManager>();
+
+	asrc = GetComponent<AudioSource>();
+  }
+
+  void OnTriggerStay (Collider other)
+  {
+	if (Input.GetMouseButtonDown(0))
+	{
+	  asrc.Play();
+	  sm.reset();
+	  sm.generate();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+  }
 }
