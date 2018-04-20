@@ -16,6 +16,7 @@ public class ButtonEventController : MonoBehaviour {
 	asrc = GetComponent<AudioSource>();
   }
 
+  // When in range of the button, left mouse click to spawn
   void OnTriggerStay (Collider other)
   {
 	if (Input.GetMouseButtonDown(0))
