@@ -22,8 +22,8 @@ public class ButtonEventController : MonoBehaviour {
 	if (Input.GetMouseButtonDown(0))
 	{
 	  asrc.Play();
-	  sm.reset();
-	  sm.generate();
+	  sm.ResetPodiums();
+	  sm.GeneratePodiums();
 	}
   }
 }

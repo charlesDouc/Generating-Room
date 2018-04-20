@@ -4,26 +4,21 @@ using UnityEngine;
 
 public class PodiumController : MonoBehaviour {
 
-	// public variables
+  public GameObject[] m_items;
+  public GameObject gm;
 
-	// private variables
+  public void SelectModel()
+  {
+	int randomItemIndex = Random.Range(0, m_items.Length);
+	
+	SpawnModel(randomItemIndex);
+  }
 
-	// ------------------------------------
-	// Use this for initialization
-	// ------------------------------------
-	void Start () {
-		
-	}
-
-	// ------------------------------------
-	// Update is called once per frame
-	// ------------------------------------
-	void Update () {
-		
-	}
-
-	// ------------------------------------
-	// Methods
-	// ------------------------------------
-
+  void SpawnModel(int modelID)
+  {
+	Vector3 podiumPosition = GetComponent<Transform>().position;
+	Vector3 modelPosition = new Vector3(podiumPosition.x, podiumPosition.y + GetComponent<Collider>().bounds.size.y, podiumPosition.z);
+	GameObject artwork = Instantiate(m_items[modelID], modelPosition, GetComponent<Transform>().rotation);
+	artwork.GetComponent<Renderer>().material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+  }
 }
