@@ -7,6 +7,7 @@ public class SpawnManager : MonoBehaviour {
 	// public variables
 	public Transform[] m_spawnPos;			// All spawn position present in the scene
 	public GameObject[] m_podiums;			// Instance of podiums
+	public GameObject[] m_items;			// Collection of items
 
 	// private variables
 
@@ -41,8 +42,15 @@ public class SpawnManager : MonoBehaviour {
 			int index = Random.Range(0, 3);
 			// Instantiate a podium at a unique position from the array
 			GameObject aPodium = Instantiate (m_podiums[index], m_spawnPos[i].position, m_spawnPos[i].rotation);
+			int itemIndex = Random.Range (0, m_items.Length);
+			GameObject aItem = Instantiate (m_items[itemIndex], aPodium.GetComponentInChildren<Transform> ().position, aPodium.GetComponentInChildren<Transform> ().rotation);
 		}
 	}
+
+	public void offset(){
+
+	}
+		
 
 	public void reset() {
 		// Get all the podiums in the room
